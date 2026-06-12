@@ -29,6 +29,7 @@ export default function Header() {
         <nav>
           <ul className="nav-menu">
             <li><a href="#features">Features</a></li>
+            <li><a href="#showcase">Showcase</a></li>
             <li><a href="#demo">TaskFlow Demo</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>

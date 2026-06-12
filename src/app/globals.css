@@ -118,10 +118,21 @@ a {
   color: transparent;
 }
 
-/* Section Spacing */
+/* Section Spacing - each section fills one screen */
 .section {
-  padding: 100px 0;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
   position: relative;
+  padding: 60px 0;
+  box-sizing: border-box;
+  z-index: 0;
+  isolation: isolate;
+  scroll-margin-top: 80px;
+}
+
+.section > .container {
+  width: 100%;
 }
 
 /* Form inputs styling */
@@ -208,6 +219,7 @@ a {
 /* Responsive constraints */
 @media (max-width: 768px) {
   .section {
+    min-height: unset;
     padding: 60px 0;
   }
 }
@@ -282,8 +294,23 @@ a {
 .hero {
   position: relative;
   text-align: center;
-  padding: 160px 0 80px 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 24px 40px 24px;
   overflow: hidden;
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.hero > .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-badge {
@@ -297,39 +324,64 @@ a {
   font-size: 12px;
   font-weight: 600;
   color: var(--primary);
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .hero-title {
-  font-size: 64px;
+  font-size: 80px;
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -1.5px;
-  max-width: 900px;
-  margin: 0 auto 24px auto;
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto 20px auto;
 }
 
 .hero-subtitle {
   font-size: 19px;
-  line-height: 1.6;
+  line-height: 1.55;
   color: var(--text-secondary);
-  max-width: 680px;
-  margin: 0 auto 40px auto;
+  max-width: 640px;
+  margin: 0 auto 32px auto;
 }
 
 .hero-actions {
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 80px;
+  margin-bottom: 0;
+}
+
+/* Features section styling */
+.features-section {
+  background: var(--bg-darker);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 40px 0;
+}
+
+.features-section .section-header {
+  margin-bottom: 24px;
+}
+
+/* Showcase section styling */
+.showcase-section {
+  background: var(--bg-dark);
+}
+
+/* Demo section styling */
+#demo {
+  background: var(--bg-darker);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 @media (max-width: 768px) {
-  .hero-title { font-size: 40px; }
+  .hero-title { font-size: 42px; letter-spacing: -1px; }
   .hero-subtitle { font-size: 16px; }
-  .hero-actions { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto 40px auto; }
+  .hero-actions { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; }
 }
 
 /* Screenshot Preview Section */
@@ -379,36 +431,36 @@ a {
 .features-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-top: 60px;
+  gap: 16px;
+  margin-top: 0;
 }
 
 .feature-card {
-  padding: 40px;
+  padding: 24px;
 }
 
 .feature-icon {
   background: rgba(99, 102, 241, 0.08);
   color: var(--primary);
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .feature-card h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .feature-card p {
   color: var(--text-secondary);
-  line-height: 1.6;
-  font-size: 15px;
+  line-height: 1.5;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {
@@ -420,14 +472,14 @@ a {
 .section-header {
   text-align: center;
   max-width: 650px;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 40px auto;
 }
 
 .section-header h2 {
   font-size: 38px;
   font-weight: 800;
   letter-spacing: -1px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .section-header p {
@@ -440,12 +492,12 @@ a {
 .demo-board {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-top: 40px;
+  gap: 24px;
+  margin-top: 16px;
   background: rgba(13, 21, 39, 0.25);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 30px;
+  padding: 24px;
   box-shadow: var(--glass-shadow);
 }
 
@@ -453,8 +505,8 @@ a {
   background: rgba(255, 255, 255, 0.015);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 24px;
-  min-height: 250px;
+  padding: 20px;
+  min-height: 180px;
 }
 
 .demo-column h3 {
@@ -556,14 +608,14 @@ a {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
-  gap: 60px;
+  gap: 40px;
   align-items: start;
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 18px;
 }
 
 .contact-item {
@@ -600,11 +652,11 @@ a {
 }
 
 .contact-form-container {
-  padding: 40px;
+  padding: 28px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .form-row {
@@ -687,8 +739,8 @@ a {
   position: relative;
   width: 100%;
   max-width: 1000px;
-  height: 480px;
-  margin: 40px auto 60px auto;
+  height: 300px;
+  margin: 60px auto 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -770,8 +822,8 @@ a {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: -10px;
-  margin-bottom: 50px;
+  margin-top: 8px;
+  margin-bottom: 0;
 }
 
 .carousel-dot {
@@ -794,7 +846,7 @@ a {
 }
 
 @media (max-width: 768px) {
-  .carousel-container { height: 300px; margin: 20px auto 40px auto; }
+  .carousel-container { height: 300px; margin: 40px auto 40px auto; }
   .carousel-card { width: 85%; }
   .carousel-btn-left { left: 5px; }
   .carousel-btn-right { right: 5px; }

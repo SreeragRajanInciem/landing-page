@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Mail, Phone, Globe, CheckCircle2, AlertTriangle, Loader2, Send } from "lucide-react";
 import InstagramIcon from "./InstagramIcon";
 
@@ -8,6 +8,15 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [formStatus, setFormStatus] = useState({ type: null, text: "" });
   const [formLoading, setFormLoading] = useState(false);
+  const textareaRef = useRef(null);
+
+  // Auto-resize message textarea as user types
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  }, [formData.message]);
 
   const handleFormChange = (e) => {
     setFormData({
@@ -45,7 +54,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section" style={{ background: "var(--bg-darker)", borderTop: "1px solid var(--border-color)" }}>
+    <section id="contact" className="section" style={{ background: "var(--bg-dark)", borderTop: "1px solid var(--border-color)" }}>
       <div className="container">
         <div className="section-header">
           <h2>Get In Touch</h2>
@@ -165,8 +174,9 @@ export default function Contact() {
                   required
                   placeholder="Enter your task manager queries here..." 
                   className="input-field" 
+                  ref={textareaRef}
                   rows={4}
-                  style={{ resize: "vertical" }}
+                  style={{ resize: "none", overflowY: "hidden" }}
                   value={formData.message}
                   onChange={handleFormChange}
                 ></textarea>
