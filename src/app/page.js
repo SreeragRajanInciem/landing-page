@@ -693,7 +693,7 @@ export default function Home() {
             <a href="https://instagram.com/taskflow_app" target="_blank" rel="noopener noreferrer" className="footer-social-link" id="social-instagram">
               <InstagramIcon size={18} />
             </a>
-            <a href="mailto:support@taskmanager.com" className="footer-social-link" id="social-mail">
+            <a href="mailto:sreeragsrg2003@gmail.com" className="footer-social-link" id="social-mail">
               <Mail size={18} />
             </a>
             <a href="http://localhost:5000" target="_blank" rel="noopener noreferrer" className="footer-social-link" id="social-web">
