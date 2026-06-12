@@ -1,0 +1,261 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%" style="border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="100%" stop-color="#070a14" />
+    </linearGradient>
+    
+    <!-- Accent Gradients -->
+    <linearGradient id="accent-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <linearGradient id="accent-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0891b2" />
+    </linearGradient>
+    <linearGradient id="accent-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="accent-yellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+
+    <!-- Glassmorphic effect filters -->
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="750" fill="url(#bg-grad)" />
+
+  <!-- Sidebar -->
+  <g transform="translate(0, 0)">
+    <!-- Sidebar background -->
+    <rect width="240" height="750" fill="#0d1527" opacity="0.8" />
+    <line x1="240" y1="0" x2="240" y2="750" stroke="#1f293d" stroke-width="1" />
+
+    <!-- Logo / Brand -->
+    <g transform="translate(30, 40)">
+      <rect x="0" y="0" width="32" height="32" rx="8" fill="url(#accent-purple)" />
+      <text x="10" y="21" font-family="sans-serif" font-weight="bold" font-size="16" fill="#ffffff">T</text>
+      <text x="44" y="22" font-family="sans-serif" font-weight="bold" font-size="18" fill="#ffffff">TaskFlow</text>
+    </g>
+
+    <!-- Navigation Items -->
+    <g transform="translate(30, 110)" font-family="sans-serif" font-size="14" fill="#94a3b8">
+      <!-- Active Item: Dashboard -->
+      <rect x="-10" y="-8" width="200" height="36" rx="8" fill="#1e293b" opacity="0.6" />
+      <circle cx="10" cy="10" r="5" fill="#8b5cf6" />
+      <text x="32" y="14" font-weight="bold" fill="#ffffff">Dashboard</text>
+
+      <!-- Tasks -->
+      <g transform="translate(0, 50)">
+        <rect x="0" y="2" width="12" height="12" rx="3" fill="none" stroke="#94a3b8" stroke-width="2" />
+        <text x="32" y="12">Tasks List</text>
+      </g>
+
+      <!-- Approvals -->
+      <g transform="translate(0, 100)">
+        <circle cx="6" cy="8" r="6" fill="none" stroke="#94a3b8" stroke-width="2" />
+        <path d="M4,8 L6,10 L9,6" fill="none" stroke="#94a3b8" stroke-width="2" />
+        <text x="32" y="12">Approvals</text>
+      </g>
+
+      <!-- Users -->
+      <g transform="translate(0, 150)">
+        <circle cx="6" cy="5" r="4" fill="none" stroke="#94a3b8" stroke-width="2" />
+        <path d="M1,13 C1,10 4,9 6,9 C8,9 11,10 11,13" fill="none" stroke="#94a3b8" stroke-width="2" />
+        <text x="32" y="12">Team Members</text>
+      </g>
+
+      <!-- Settings -->
+      <g transform="translate(0, 200)">
+        <circle cx="6" cy="8" r="4" fill="none" stroke="#94a3b8" stroke-width="2" />
+        <path d="M6,2 L6,4 M6,12 L6,14 M2,8 L4,8 M12,8 L14,8" stroke="#94a3b8" stroke-width="2" />
+        <text x="32" y="12">Settings</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Top Navigation Header -->
+  <g transform="translate(240, 0)">
+    <rect width="960" height="80" fill="#0d1527" opacity="0.5" />
+    <line x1="0" y1="80" x2="960" y2="80" stroke="#1f293d" stroke-width="1" />
+
+    <!-- Search Bar -->
+    <g transform="translate(40, 22)">
+      <rect width="280" height="36" rx="8" fill="#1e293b" opacity="0.5" stroke="#334155" stroke-width="1" />
+      <text x="16" y="22" font-family="sans-serif" font-size="14" fill="#64748b">Search tasks, members...</text>
+    </g>
+
+    <!-- User Profile & Notifications -->
+    <g transform="translate(800, 20)">
+      <!-- Notification Icon -->
+      <g transform="translate(0, 8)" opacity="0.8">
+        <path d="M6,2 C4.9,2 4,2.9 4,4 L4,10 L2,12 L2,13 L14,13 L14,12 L12,10 L12,4 C12,2.9 11.1,2 10,2 L6,2 Z" fill="none" stroke="#ffffff" stroke-width="2" />
+        <circle cx="8" cy="15" r="2" fill="#ffffff" />
+        <!-- Notification Dot -->
+        <circle cx="12" cy="4" r="4" fill="#ef4444" />
+      </g>
+
+      <!-- Avatar & Name -->
+      <g transform="translate(40, -4)">
+        <circle cx="20" cy="24" r="18" fill="url(#accent-purple)" />
+        <text x="14" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#ffffff">JD</text>
+        <text x="46" y="22" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">John Doe</text>
+        <text x="46" y="36" font-family="sans-serif" font-size="11" fill="#64748b">Project Manager</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Dashboard Content Area -->
+  <g transform="translate(280, 110)">
+    <!-- Header Title -->
+    <text x="0" y="30" font-family="sans-serif" font-size="24" font-weight="bold" fill="#ffffff">Dashboard Overview</text>
+    <text x="0" y="50" font-family="sans-serif" font-size="14" fill="#64748b">Real-time status of your projects and task metrics.</text>
+
+    <!-- Stats Row -->
+    <g transform="translate(0, 80)">
+      <!-- Card 1: Total Tasks -->
+      <g>
+        <rect width="200" height="110" rx="12" fill="#111827" stroke="#1f293d" stroke-width="1.5" />
+        <text x="20" y="32" font-family="sans-serif" font-size="12" font-weight="bold" fill="#94a3b8" letter-spacing="1">TOTAL TASKS</text>
+        <text x="20" y="72" font-family="sans-serif" font-size="32" font-weight="bold" fill="#ffffff">128</text>
+        <!-- Sparkline -->
+        <path d="M110,75 L125,65 L140,70 L155,55 L170,60 L185,45" fill="none" stroke="#8b5cf6" stroke-width="2.5" stroke-linecap="round" />
+        <circle cx="185" cy="45" r="3" fill="#8b5cf6" filter="url(#glow)" />
+      </g>
+
+      <!-- Card 2: Completed -->
+      <g transform="translate(225, 0)">
+        <rect width="200" height="110" rx="12" fill="#111827" stroke="#1f293d" stroke-width="1.5" />
+        <text x="20" y="32" font-family="sans-serif" font-size="12" font-weight="bold" fill="#94a3b8" letter-spacing="1">COMPLETED</text>
+        <text x="20" y="72" font-family="sans-serif" font-size="32" font-weight="bold" fill="#10b981">92</text>
+        <!-- Sparkline -->
+        <path d="M110,70 L125,72 L140,60 L155,62 L170,45 L185,40" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" />
+        <circle cx="185" cy="40" r="3" fill="#10b981" filter="url(#glow)" />
+      </g>
+
+      <!-- Card 3: Pending Approval -->
+      <g transform="translate(450, 0)">
+        <rect width="200" height="110" rx="12" fill="#111827" stroke="#1f293d" stroke-width="1.5" />
+        <text x="20" y="32" font-family="sans-serif" font-size="12" font-weight="bold" fill="#94a3b8" letter-spacing="1">PENDING APPROVAL</text>
+        <text x="20" y="72" font-family="sans-serif" font-size="32" font-weight="bold" fill="#f59e0b">14</text>
+        <!-- Sparkline -->
+        <path d="M110,60 L125,65 L140,55 L155,70 L170,65 L185,75" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" />
+        <circle cx="185" cy="75" r="3" fill="#f59e0b" filter="url(#glow)" />
+      </g>
+
+      <!-- Card 4: Efficiency -->
+      <g transform="translate(675, 0)">
+        <rect width="205" height="110" rx="12" fill="#111827" stroke="#1f293d" stroke-width="1.5" />
+        <text x="20" y="32" font-family="sans-serif" font-size="12" font-weight="bold" fill="#94a3b8" letter-spacing="1">COMPLETION RATE</text>
+        <text x="20" y="72" font-family="sans-serif" font-size="32" font-weight="bold" fill="#06b6d4">87%</text>
+        <!-- Progress bar visual -->
+        <rect x="110" y="62" width="75" height="8" rx="4" fill="#1e293b" />
+        <rect x="110" y="62" width="65" height="8" rx="4" fill="url(#accent-cyan)" filter="url(#glow)" />
+      </g>
+    </g>
+
+    <!-- Table Section: Active Projects -->
+    <g transform="translate(0, 220)">
+      <rect width="880" height="360" rx="12" fill="#111827" stroke="#1f293d" stroke-width="1.5" />
+      <text x="24" y="36" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ffffff">Active Tasks &amp; Milestones</text>
+      <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#64748b">Current priority tasks requiring immediate attention.</text>
+
+      <!-- Headers -->
+      <g transform="translate(24, 90)" font-family="sans-serif" font-size="12" font-weight="bold" fill="#475569">
+        <text x="0" y="0">TASK DESCRIPTION</text>
+        <text x="320" y="0">ASSIGNED TO</text>
+        <text x="480" y="0">DUE DATE</text>
+        <text x="620" y="0">STATUS</text>
+        <text x="740" y="0">PRIORITY</text>
+      </g>
+      <line x1="24" y1="105" x2="856" y2="105" stroke="#1f293d" stroke-width="1.5" />
+
+      <!-- Row 1 -->
+      <g transform="translate(24, 135)" font-family="sans-serif" font-size="14" fill="#e2e8f0">
+        <!-- Circle check icon -->
+        <circle cx="10" cy="-4" r="8" fill="none" stroke="#10b981" stroke-width="2" />
+        <path d="M7,-4 L9,-2 L13,-6" fill="none" stroke="#10b981" stroke-width="2" />
+        
+        <text x="32" y="0" font-weight="bold">Optimize auth controller token logic</text>
+        <text x="320" y="0" fill="#94a3b8">Sarah Jenkins</text>
+        <text x="480" y="0" fill="#94a3b8">Jun 14, 2026</text>
+        
+        <!-- Status Badge (Completed) -->
+        <rect x="620" y="-12" width="85" height="20" rx="10" fill="#064e3b" />
+        <text x="635" y="2" font-size="11" font-weight="bold" fill="#34d399">Completed</text>
+        
+        <!-- Priority Badge (High) -->
+        <rect x="740" y="-12" width="60" height="20" rx="10" fill="#7f1d1d" />
+        <text x="755" y="2" font-size="11" font-weight="bold" fill="#f87171">High</text>
+      </g>
+      <line x1="24" y1="155" x2="856" y2="155" stroke="#1f293d" stroke-width="1" />
+
+      <!-- Row 2 -->
+      <g transform="translate(24, 185)" font-family="sans-serif" font-size="14" fill="#e2e8f0">
+        <!-- In progress clock icon -->
+        <circle cx="10" cy="-4" r="8" fill="none" stroke="#8b5cf6" stroke-width="2" />
+        <path d="M10,-8 L10,-4 L13,-4" fill="none" stroke="#8b5cf6" stroke-width="2" />
+
+        <text x="32" y="0" font-weight="bold">Configure landing page responsive layout</text>
+        <text x="320" y="0" fill="#94a3b8">Alex Mercer</text>
+        <text x="480" y="0" fill="#94a3b8">Jun 16, 2026</text>
+
+        <!-- Status Badge (In Progress) -->
+        <rect x="620" y="-12" width="90" height="20" rx="10" fill="#1e1b4b" />
+        <text x="632" y="2" font-size="11" font-weight="bold" fill="#a5b4fc">In Progress</text>
+
+        <!-- Priority Badge (Medium) -->
+        <rect x="740" y="-12" width="70" height="20" rx="10" fill="#78350f" />
+        <text x="752" y="2" font-size="11" font-weight="bold" fill="#fcd34d">Medium</text>
+      </g>
+      <line x1="24" y1="205" x2="856" y2="205" stroke="#1f293d" stroke-width="1" />
+
+      <!-- Row 3 -->
+      <g transform="translate(24, 235)" font-family="sans-serif" font-size="14" fill="#e2e8f0">
+        <!-- Warning clock icon -->
+        <circle cx="10" cy="-4" r="8" fill="none" stroke="#f59e0b" stroke-width="2" />
+        <line x1="10" y1="-8" x2="10" y2="-4" stroke="#f59e0b" stroke-width="2" />
+        <line x1="10" y1="-2" x2="10" y2="-2" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" />
+
+        <text x="32" y="0" font-weight="bold">Approve user roles and dashboard access</text>
+        <text x="320" y="0" fill="#94a3b8">Emily Watson</text>
+        <text x="480" y="0" fill="#94a3b8">Jun 12, 2026</text>
+
+        <!-- Status Badge (Pending) -->
+        <rect x="620" y="-12" width="90" height="20" rx="10" fill="#451a03" />
+        <text x="633" y="2" font-size="11" font-weight="bold" fill="#fcd34d">Pending Appr</text>
+
+        <!-- Priority Badge (High) -->
+        <rect x="740" y="-12" width="60" height="20" rx="10" fill="#7f1d1d" />
+        <text x="755" y="2" font-size="11" font-weight="bold" fill="#f87171">High</text>
+      </g>
+      <line x1="24" y1="255" x2="856" y2="255" stroke="#1f293d" stroke-width="1" />
+
+      <!-- Row 4 -->
+      <g transform="translate(24, 285)" font-family="sans-serif" font-size="14" fill="#e2e8f0">
+        <!-- Standby icon -->
+        <circle cx="10" cy="-4" r="8" fill="none" stroke="#64748b" stroke-width="2" opacity="0.6" />
+        <text x="32" y="0" font-weight="bold" opacity="0.6">Integrate system-wide notifications page</text>
+        <text x="320" y="0" fill="#94a3b8" opacity="0.6">David Miller</text>
+        <text x="480" y="0" fill="#94a3b8" opacity="0.6">Jun 20, 2026</text>
+
+        <!-- Status Badge (Deferred) -->
+        <rect x="620" y="-12" width="80" height="20" rx="10" fill="#1f293d" opacity="0.6" />
+        <text x="635" y="2" font-size="11" font-weight="bold" fill="#94a3b8" opacity="0.6">Deferred</text>
+
+        <!-- Priority Badge (Low) -->
+        <rect x="740" y="-12" width="55" height="20" rx="10" fill="#1e293b" opacity="0.6" />
+        <text x="753" y="2" font-size="11" font-weight="bold" fill="#94a3b8" opacity="0.6">Low</text>
+      </g>
+    </g>
+  </g>
+</svg>
